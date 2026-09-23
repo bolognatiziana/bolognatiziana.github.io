@@ -1,0 +1,2325 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Portfolio Tiziana Bologna
+    </title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            height: 100vh;
+            width: 100vw;
+
+            overflow: hidden;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "SF Pro Display",
+                "SF Pro Text",
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+
+            background-color: #121824;
+
+            background-image:
+                url('pixel tizi.png');
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            image-rendering: pixelated;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        /* =====================================================
+           MACOS TOP MENU BAR
+        ===================================================== */
+
+        .menubar {
+
+            height: 30px;
+
+            flex-shrink: 0;
+
+            background:
+                rgba(255,255,255,0.25);
+
+            backdrop-filter:
+                blur(20px);
+
+            -webkit-backdrop-filter:
+                blur(20px);
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            padding:
+                0 16px;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            color: white;
+
+            text-shadow:
+                0 1px 2px
+                rgba(0,0,0,0.3);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            z-index: 1000;
+        }
+
+
+        .menu-left,
+        .menu-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+        }
+
+
+        .menu-item {
+
+            cursor: pointer;
+
+            transition:
+                opacity 0.2s;
+        }
+
+
+        .menu-item:hover {
+
+            opacity: 0.75;
+        }
+
+
+        .apple-icon {
+
+            font-size: 15px;
+
+            font-weight: bold;
+        }
+
+
+        .instagram-top {
+
+            color: white;
+
+            text-decoration: none;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           DESKTOP
+        ===================================================== */
+
+        .desktop {
+
+            flex-grow: 1;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            position: relative;
+        }
+
+
+        /* =====================================================
+           FINDER WINDOW
+        ===================================================== */
+
+        .finder-window {
+
+            width: 900px;
+
+            height: 560px;
+
+            max-width: 95vw;
+
+            max-height: 80vh;
+
+            background:
+                rgba(255,255,255,0.85);
+
+            backdrop-filter:
+                blur(30px);
+
+            -webkit-backdrop-filter:
+                blur(30px);
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 30px 60px
+                rgba(0,0,0,0.4),
+
+                0 0 0 1px
+                rgba(255,255,255,0.4)
+                inset;
+
+            display: flex;
+
+            flex-direction: column;
+
+            overflow: hidden;
+
+            animation:
+                popIn
+                0.3s
+                cubic-bezier(
+                    0.16,
+                    1,
+                    0.3,
+                    1
+                );
+        }
+
+
+        @keyframes popIn {
+
+            from {
+
+                transform:
+                    scale(0.95);
+
+                opacity: 0;
+            }
+
+            to {
+
+                transform:
+                    scale(1);
+
+                opacity: 1;
+            }
+        }
+
+
+        /* =====================================================
+           TITLE BAR
+        ===================================================== */
+
+        .titlebar {
+
+            height: 48px;
+
+            flex-shrink: 0;
+
+            padding:
+                0 16px;
+
+            display: flex;
+
+            align-items: center;
+
+            border-bottom:
+                1px solid
+                rgba(0,0,0,0.08);
+
+            background:
+                rgba(245,245,247,0.6);
+
+            position: relative;
+        }
+
+
+        /* =====================================================
+           TRAFFIC LIGHTS
+        ===================================================== */
+
+        .traffic-lights {
+
+            display: flex;
+
+            gap: 8px;
+        }
+
+
+        .light {
+
+            width: 12px;
+
+            height: 12px;
+
+            border-radius: 50%;
+
+            border:
+                0.5px solid
+                rgba(0,0,0,0.15);
+
+            cursor: pointer;
+        }
+
+
+        .light.close {
+
+            background-color:
+                #FF5F56;
+        }
+
+
+        .light.minimize {
+
+            background-color:
+                #FFBD2E;
+        }
+
+
+        .light.maximize {
+
+            background-color:
+                #27C93F;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .nav-controls {
+
+            display: flex;
+
+            gap: 8px;
+
+            margin-left: 20px;
+        }
+
+
+        .nav-btn {
+
+            background: none;
+
+            border: none;
+
+            color: #555;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            padding:
+                4px 8px;
+
+            border-radius: 6px;
+
+            transition:
+                background 0.2s;
+        }
+
+
+        .nav-btn:hover:not(:disabled) {
+
+            background:
+                rgba(0,0,0,0.06);
+        }
+
+
+        .nav-btn:disabled {
+
+            opacity: 0.3;
+
+            cursor: default;
+        }
+
+
+        /* =====================================================
+           WINDOW TITLE
+        ===================================================== */
+
+        .window-title {
+
+            position: absolute;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #333;
+        }
+
+
+        /* =====================================================
+           ACTION BUTTONS
+        ===================================================== */
+
+        .toolbar-actions {
+
+            margin-left: auto;
+
+            display: flex;
+
+            gap: 12px;
+        }
+
+
+        .action-link {
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            color: #007AFF;
+
+            text-decoration: none;
+
+            padding:
+                4px 10px;
+
+            background:
+                rgba(0,122,255,0.1);
+
+            border-radius: 6px;
+
+            transition:
+                all 0.2s;
+        }
+
+
+        .action-link:hover {
+
+            background:
+                #007AFF;
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           WINDOW BODY
+        ===================================================== */
+
+        .window-body {
+
+            display: flex;
+
+            flex-grow: 1;
+
+            overflow: hidden;
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ===================================================== */
+
+        .sidebar {
+
+            width: 210px;
+
+            flex-shrink: 0;
+
+            background:
+                rgba(238,238,242,0.5);
+
+            border-right:
+                1px solid
+                rgba(0,0,0,0.08);
+
+            padding:
+                16px 12px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 16px;
+
+            overflow-y: auto;
+        }
+
+
+        .sidebar-section-title {
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            color: #8e8e93;
+
+            padding-left: 8px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        .sidebar-list {
+
+            list-style: none;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2px;
+
+            margin: 0;
+
+            padding: 0;
+        }
+
+
+        .sidebar-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                6px 10px;
+
+            border-radius: 6px;
+
+            font-size: 13px;
+
+            color: #2c2c2e;
+
+            cursor: pointer;
+
+            transition:
+                background 0.15s;
+        }
+
+
+        .sidebar-item:hover {
+
+            background:
+                rgba(0,0,0,0.05);
+        }
+
+
+        .sidebar-item.active {
+
+            background:
+                rgba(0,0,0,0.1);
+
+            font-weight: 600;
+        }
+
+
+        .tag-dot {
+
+            width: 10px;
+
+            height: 10px;
+
+            border-radius: 50%;
+        }
+
+
+        /* =====================================================
+           CONTENT
+        ===================================================== */
+
+        .content-area {
+
+            flex-grow: 1;
+
+            padding: 24px;
+
+            overflow-y: auto;
+
+            background:
+                rgba(255,255,255,0.6);
+        }
+
+
+        .breadcrumb {
+
+            font-size: 12px;
+
+            color: #666;
+
+            margin-bottom: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+        }
+
+
+        .file-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fill,
+                    minmax(110px,1fr)
+                );
+
+            gap:
+                24px 16px;
+
+            align-items: start;
+        }
+
+
+        .grid-item {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            cursor: pointer;
+
+            padding: 8px;
+
+            border-radius: 8px;
+
+            transition:
+                background 0.15s,
+                transform 0.15s;
+
+            text-align: center;
+        }
+
+
+        .grid-item:hover {
+
+            background:
+                rgba(255,82,123,0.12);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .grid-item:active {
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           PINK FOLDERS
+        ===================================================== */
+
+        .folder-icon-svg {
+
+            width: 72px;
+
+            height: 60px;
+
+            filter:
+                drop-shadow(
+                    0 3px 5px
+                    rgba(255,82,123,0.2)
+                );
+
+            transition:
+                transform 0.2s;
+        }
+
+
+        .grid-item:hover
+        .folder-icon-svg {
+
+            transform:
+                scale(1.05);
+        }
+
+
+        .item-label {
+
+            margin-top: 8px;
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            color: #1d1d1f;
+
+            word-break: break-word;
+
+            line-height: 1.3;
+
+            max-width: 100px;
+        }
+
+
+        /* =====================================================
+           DRIVE BANNER
+        ===================================================== */
+
+        .drive-banner {
+
+            grid-column: 1 / -1;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #FF527B,
+                    #FF1744
+                );
+
+            color: white;
+
+            padding:
+                16px 20px;
+
+            border-radius: 10px;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            box-shadow:
+                0 10px 20px
+                rgba(255,23,68,0.25);
+
+            margin-bottom: 12px;
+        }
+
+
+        .drive-banner h3 {
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            margin:
+                0 0 4px 0;
+        }
+
+
+        .drive-banner p {
+
+            font-size: 12px;
+
+            opacity: 0.9;
+
+            margin: 0;
+        }
+
+
+        .drive-btn {
+
+            background: white;
+
+            color: #FF1744;
+
+            padding:
+                8px 16px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 4px 10px
+                rgba(0,0,0,0.15);
+
+            transition:
+                transform 0.2s,
+                background 0.2s;
+        }
+
+
+        .drive-btn:hover {
+
+            transform:
+                scale(1.05);
+
+            background:
+                #fff0f3;
+        }
+
+
+        /* =====================================================
+           FILE ICON
+        ===================================================== */
+
+        .file-icon {
+
+            width: 58px;
+
+            height: 64px;
+
+            background: white;
+
+            border-radius: 6px;
+
+            box-shadow:
+                0 2px 8px
+                rgba(0,0,0,0.1);
+
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            color: #FF2D55;
+
+            border:
+                1px solid
+                rgba(0,0,0,0.08);
+        }
+
+
+        .file-icon::after {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            right: 0;
+
+            border-width:
+                0 12px 12px 0;
+
+            border-style: solid;
+
+            border-color:
+                rgba(0,0,0,0.15)
+                #f4f4f4;
+
+            border-radius:
+                0 0 0 3px;
+        }
+
+
+        /* =====================================================
+           DOCK
+        ===================================================== */
+
+        .dock-container {
+
+            position: fixed;
+
+            left: 50%;
+
+            bottom: 10px;
+
+            transform:
+                translateX(-50%);
+
+            width: auto;
+
+            height: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-end;
+
+            z-index: 1500;
+
+            pointer-events: none;
+        }
+
+
+        .dock-image {
+
+            display: block;
+
+            /*
+               Dimensione del Dock.
+               Puoi cambiarla:
+               650px = più piccolo
+               750px = medio
+               850px = più grande
+            */
+
+            width: 700px;
+
+            max-width: 75vw;
+
+            height: auto;
+
+            object-fit: contain;
+
+            object-position:
+                center bottom;
+
+            cursor: pointer;
+
+            pointer-events: auto;
+
+            user-select: none;
+
+            -webkit-user-drag: none;
+
+            filter:
+                drop-shadow(
+                    0 4px 12px
+                    rgba(0,0,0,0.25)
+                );
+
+            transition:
+                transform 0.15s ease;
+        }
+
+
+        .dock-image:hover {
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =====================================================
+           ABOUT MODAL
+        ===================================================== */
+
+        .modal-overlay {
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,0.4);
+
+            backdrop-filter:
+                blur(5px);
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 2000;
+        }
+
+
+        .modal-card {
+
+            background: white;
+
+            width: 380px;
+
+            max-width: 90vw;
+
+            padding: 24px;
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 20px 40px
+                rgba(0,0,0,0.3);
+
+            text-align: center;
+        }
+
+
+        .modal-card h2 {
+
+            font-size: 20px;
+
+            margin:
+                0 0 8px;
+
+            color: #1d1d1f;
+        }
+
+
+        .modal-card p {
+
+            font-size: 14px;
+
+            color: #6e6e73;
+
+            line-height: 1.5;
+
+            margin-bottom: 20px;
+        }
+
+
+        .modal-card button {
+
+            background:
+                #FF527B;
+
+            color: white;
+
+            border: none;
+
+            padding:
+                8px 20px;
+
+            border-radius: 8px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .finder-window {
+
+                width: 95vw;
+
+                height: 75vh;
+            }
+
+
+            .sidebar {
+
+                display: none;
+            }
+
+
+            .desktop {
+
+                padding: 10px;
+            }
+
+
+            .toolbar-actions {
+
+                display: none;
+            }
+
+
+            .drive-banner {
+
+                flex-direction: column;
+
+                gap: 12px;
+
+                text-align: center;
+            }
+
+
+            .dock-image {
+
+                width: 600px;
+
+                max-width: 85vw;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         MACOS MENU BAR
+    ===================================================== -->
+
+    <div class="menubar">
+
+
+        <div class="menu-left">
+
+
+            <span
+                class="menu-item apple-icon">
+
+                
+
+            </span>
+
+
+            <span
+                class="menu-item"
+                style="font-weight:700;"
+                onclick="openFinder()">
+
+                Finder
+
+            </span>
+
+
+            <span
+                class="menu-item"
+                onclick="openAboutModal()">
+
+                About Tiziana
+
+            </span>
+
+
+            <span
+                class="menu-item"
+                onclick="openInstagram()">
+
+                Instagram
+
+            </span>
+
+
+        </div>
+
+
+        <div class="menu-right">
+
+
+            <a
+                href="https://www.instagram.com/ctrlpiux/?hl=it"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="menu-item instagram-top">
+
+                @ctrlpiux
+
+            </a>
+
+
+            <span
+                id="clock"
+                class="menu-item">
+
+                12:00
+
+            </span>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DESKTOP / FINDER
+    ===================================================== -->
+
+    <div class="desktop">
+
+
+        <div
+            class="finder-window"
+            id="finder-window">
+
+
+            <!-- TITLE BAR -->
+
+            <div class="titlebar">
+
+
+                <div class="traffic-lights">
+
+
+                    <!-- ROSSO = CHIUDI -->
+
+                    <div
+                        class="light close"
+                        onclick="closeFinder()"
+                        title="Chiudi">
+
+                    </div>
+
+
+                    <div
+                        class="light minimize"
+                        title="Minimizza">
+
+                    </div>
+
+
+                    <div
+                        class="light maximize"
+                        title="Ingrandisci">
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- NAVIGATION -->
+
+                <div class="nav-controls">
+
+
+                    <button
+                        class="nav-btn"
+                        id="back-btn"
+                        onclick="goBack()"
+                        disabled>
+
+                        ❮
+
+                    </button>
+
+
+                    <button
+                        class="nav-btn"
+                        disabled>
+
+                        ❯
+
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- WINDOW TITLE -->
+
+                <div
+                    class="window-title"
+                    id="window-title">
+
+                    Works
+
+                </div>
+
+
+
+                <!-- ACTIONS -->
+
+                <div class="toolbar-actions">
+
+
+                    <a
+                        href="#"
+                        class="action-link"
+                        onclick="
+                            openAboutModal();
+                            return false;
+                        ">
+
+                        About me
+
+                    </a>
+
+
+                    <a
+                        href="https://www.instagram.com/ctrlpiux/?hl=it"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="action-link">
+
+                        @ctrlpiux
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 WINDOW BODY
+            ================================================= -->
+
+            <div class="window-body">
+
+
+                <!-- SIDEBAR -->
+
+                <div class="sidebar">
+
+
+                    <div class="sidebar-section-title">
+
+                        Favorites
+
+                    </div>
+
+
+                    <ul class="sidebar-list">
+
+
+                        <li class="sidebar-item">
+
+                            AirDrop
+
+                        </li>
+
+
+                        <li class="sidebar-item">
+
+                            Recents
+
+                        </li>
+
+
+                        <li class="sidebar-item">
+
+                            Applications
+
+                        </li>
+
+
+                        <li class="sidebar-item">
+
+                            Downloads
+
+                        </li>
+
+
+                    </ul>
+
+
+
+                    <div class="sidebar-section-title">
+
+                        iCloud
+
+                    </div>
+
+
+                    <ul class="sidebar-list">
+
+
+                        <li class="sidebar-item">
+
+                            iCloud Drive
+
+                        </li>
+
+
+                        <li class="sidebar-item">
+
+                            Documents
+
+                        </li>
+
+
+                        <li
+                            class="sidebar-item active"
+                            onclick="navigateTo('root')">
+
+                            Works
+
+                        </li>
+
+
+                        <li class="sidebar-item">
+
+                            Desktop
+
+                        </li>
+
+
+                    </ul>
+
+
+
+                    <div class="sidebar-section-title">
+
+                        Tags
+
+                    </div>
+
+
+                    <ul class="sidebar-list">
+
+
+                        <li class="sidebar-item">
+
+                            <span
+                                class="tag-dot"
+                                style="
+                                    background:#FF3B30;
+                                ">
+                            </span>
+
+                            Red
+
+                        </li>
+
+
+                        <li class="sidebar-item">
+
+                            <span
+                                class="tag-dot"
+                                style="
+                                    background:#FF9500;
+                                ">
+                            </span>
+
+                            Orange
+
+                        </li>
+
+
+                        <li class="sidebar-item">
+
+                            <span
+                                class="tag-dot"
+                                style="
+                                    background:#FFCC00;
+                                ">
+                            </span>
+
+                            Yellow
+
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+
+
+
+                <!-- MAIN CONTENT -->
+
+                <div class="content-area">
+
+
+                    <div
+                        class="breadcrumb"
+                        id="breadcrumb">
+
+                        <span>
+                            Works
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="file-grid"
+                        id="grid-container">
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         DOCK
+    ===================================================== -->
+
+    <div class="dock-container">
+
+
+        <img
+            src="barra app.png"
+            alt="Barra applicazioni"
+            class="dock-image"
+            onclick="openFinder()">
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ABOUT MODAL
+    ===================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="modal-overlay">
+
+
+        <div class="modal-card">
+
+
+            <h2>
+
+                Tiziana Bologna
+
+            </h2>
+
+
+            <p>
+
+                I'm a motion designer,
+                graphic designer,
+                illustrator and AI Designer.
+
+                <br><br>
+
+                <strong>
+                    Instagram:
+                </strong>
+
+                @ctrlpiux
+
+            </p>
+
+
+            <button
+                onclick="closeModal()">
+
+                Chiudi
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         PINK FOLDER
+    ===================================================== -->
+
+    <template id="pink-folder-svg">
+
+
+        <svg
+            class="folder-icon-svg"
+            viewBox="0 0 100 80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+
+
+            <path
+                d="
+                M6 16
+                C6 11.5817
+                9.58172 8
+                14 8
+                H36
+                C39.3137 8
+                42.2582 10.0463
+                43.4853 13.1132
+                L45.4147 17.9368
+                C46.0283 19.4703
+                47.5005 20.4935
+                49.1572 20.4935
+                H86
+                C90.4183 20.4935
+                94 24.0752
+                94 28.4935
+                V62
+                C94 66.4183
+                90.4183 70
+                86 70
+                H14
+                C9.58172 70
+                6 66.4183
+                6 62
+                V16Z
+                "
+                fill="#FF527B"/>
+
+
+            <rect
+                x="6"
+                y="22"
+                width="88"
+                height="48"
+                rx="8"
+                fill="#FF729F"/>
+
+
+            <path
+                d="
+                M14 22
+                H86
+                C90.4183 22
+                94 25.5817
+                94 30
+                V34
+                H6
+                V30
+                C6 25.5817
+                9.58172 22
+                14 22Z
+                "
+                fill="#FF85AB"
+                opacity="0.6"/>
+
+
+        </svg>
+
+
+    </template>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           FILE SYSTEM
+        ===================================================== */
+
+        const fileSystem = {
+
+
+            root: {
+
+                title: 'Works',
+
+                path: [
+                    'Works'
+                ],
+
+                items: [
+
+                    {
+                        type: 'folder',
+                        target: 'motion',
+                        name: 'Motion Design'
+                    },
+
+
+                    {
+                        type: 'folder',
+                        target: 'genai',
+                        name: 'GEN AI'
+                    },
+
+
+                    {
+                        type: 'folder',
+                        target: 'graphic',
+                        name: 'Graphic Design'
+                    },
+
+
+                    {
+                        type: 'folder',
+                        target: 'illustration',
+                        name: 'Illustration'
+                    }
+
+                ]
+
+            },
+
+
+            motion: {
+
+                title: 'Motion Design',
+
+                path: [
+                    'Works',
+                    'Motion Design'
+                ],
+
+                driveUrl:
+                    'https://drive.google.com/drive/folders/1mzIwFpq3AhprZ6vJnF4BoeL-WdopQw-r?usp=sharing',
+
+                items: [
+
+                    {
+                        type: 'file',
+                        name: 'Isybank',
+                        ext: 'MOV'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Spotify Visual Falza',
+                        ext: 'MOV'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Fideuram Direct',
+                        ext: 'MP4'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Inps ArtCom',
+                        ext: 'MOV'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Unicredit Buddy',
+                        ext: 'MP4'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Fuori',
+                        ext: 'MOV'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Brembo',
+                        ext: 'MP4'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Inail',
+                        ext: 'MOV'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'QFORT',
+                        ext: 'MP4'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Visual Noised Blessed',
+                        ext: 'MOV'
+                    }
+
+                ]
+
+            },
+
+
+            genai: {
+
+                title: 'GEN AI',
+
+                path: [
+                    'Works',
+                    'GEN AI'
+                ],
+
+                driveUrl:
+                    'https://drive.google.com/drive/folders/1JI0iy9bUP7MTlEvs-6HIRZi_nz9Hn2P3?usp=sharing',
+
+                items: [
+
+                    {
+                        type: 'file',
+                        name: 'Moncler',
+                        ext: 'PNG'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'D&G x Bialetti',
+                        ext: 'PNG'
+                    }
+
+                ]
+
+            },
+
+
+            graphic: {
+
+                title: 'Graphic Design',
+
+                path: [
+                    'Works',
+                    'Graphic Design'
+                ],
+
+                driveUrl:
+                    'https://drive.google.com/drive/folders/1vRyfFrn6peq6_JncDsNUgnX6SYY6-3PG?usp=sharing',
+
+                items: [
+
+                    {
+                        type: 'file',
+                        name: 'ControPinocchio Ritratto',
+                        ext: 'PDF'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Flatmates',
+                        ext: 'PDF'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Mulac',
+                        ext: 'PDF'
+                    }
+
+                ]
+
+            },
+
+
+            illustration: {
+
+                title: 'Illustration',
+
+                path: [
+                    'Works',
+                    'Illustration'
+                ],
+
+                driveUrl:
+                    'https://drive.google.com/drive/folders/1liWFTKuT2Xw9vzu8Lg-5de3HTERVkt8n?usp=drive_link',
+
+                items: [
+
+                    {
+                        type: 'file',
+                        name: 'Spotify Cover x ADAMO',
+                        ext: 'JPG'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Spotify Cover x Falza 1',
+                        ext: 'JPG'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Spotify Cover x Falza 2',
+                        ext: 'JPG'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'Spotify Cover x Falza 3',
+                        ext: 'JPG'
+                    },
+
+
+                    {
+                        type: 'file',
+                        name: 'ControPinocchio Ritratto',
+                        ext: 'JPG'
+                    }
+
+                ]
+
+            }
+
+        };
+
+
+
+        /* =====================================================
+           CURRENT FOLDER
+        ===================================================== */
+
+        let currentFolder = 'root';
+
+
+
+        /* =====================================================
+           RENDER
+        ===================================================== */
+
+        function renderView(folderKey) {
+
+
+            currentFolder =
+                folderKey;
+
+
+            const folder =
+                fileSystem[folderKey];
+
+
+            const container =
+                document.getElementById(
+                    'grid-container'
+                );
+
+
+            const breadcrumb =
+                document.getElementById(
+                    'breadcrumb'
+                );
+
+
+            const windowTitle =
+                document.getElementById(
+                    'window-title'
+                );
+
+
+            const backBtn =
+                document.getElementById(
+                    'back-btn'
+                );
+
+
+            const svgFolderContent =
+                document.getElementById(
+                    'pink-folder-svg'
+                ).innerHTML;
+
+
+
+            /* TITLE */
+
+            windowTitle.innerHTML =
+                folder.title;
+
+
+
+            /* BREADCRUMB */
+
+            breadcrumb.innerHTML =
+                folder.path
+                    .map(
+                        p =>
+                            `<span>${p}</span>`
+                    )
+                    .join(' ❯ ');
+
+
+
+            /* BACK BUTTON */
+
+            backBtn.disabled =
+                folderKey === 'root';
+
+
+
+            /* CLEAR */
+
+            container.innerHTML = '';
+
+
+
+            /* =================================================
+               DRIVE BANNER
+            ================================================= */
+
+            if (folder.driveUrl) {
+
+
+                const banner =
+                    document.createElement(
+                        'div'
+                    );
+
+
+                banner.className =
+                    'drive-banner';
+
+
+                banner.innerHTML = `
+
+                    <div>
+
+                        <h3>
+                            Guarda i Progetti Video / Drive
+                        </h3>
+
+                        <p>
+                            Accedi ai file multimediali
+                            e alla cartella completa
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        href="${folder.driveUrl}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="drive-btn">
+
+                        Apri Drive ↗
+
+                    </a>
+
+                `;
+
+
+                container.appendChild(
+                    banner
+                );
+
+            }
+
+
+
+            /* =================================================
+               ITEMS
+            ================================================= */
+
+            folder.items.forEach(
+                item => {
+
+
+                    const itemEl =
+                        document.createElement(
+                            'div'
+                        );
+
+
+                    itemEl.className =
+                        'grid-item';
+
+
+
+                    /* FOLDER */
+
+                    if (
+                        item.type === 'folder'
+                    ) {
+
+
+                        itemEl.innerHTML = `
+
+                            ${svgFolderContent}
+
+                            <div
+                                class="item-label">
+
+                                ${item.name}
+
+                            </div>
+
+                        `;
+
+
+                        itemEl.onclick =
+                            () =>
+                                navigateTo(
+                                    item.target
+                                );
+
+                    }
+
+
+
+                    /* FILE */
+
+                    else {
+
+
+                        itemEl.innerHTML = `
+
+                            <div
+                                class="file-icon">
+
+                                ${item.ext}
+
+                            </div>
+
+
+                            <div
+                                class="item-label">
+
+                                ${item.name}
+
+                            </div>
+
+                        `;
+
+
+                        itemEl.onclick =
+                            () => {
+
+                                if (
+                                    folder.driveUrl
+                                ) {
+
+                                    window.open(
+                                        folder.driveUrl,
+                                        '_blank'
+                                    );
+
+                                }
+
+                            };
+
+                    }
+
+
+
+                    container.appendChild(
+                        itemEl
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        function navigateTo(folderKey) {
+
+            renderView(
+                folderKey
+            );
+
+        }
+
+
+        function goBack() {
+
+            if (
+                currentFolder !== 'root'
+            ) {
+
+                renderView(
+                    'root'
+                );
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           CHIUDI FINDER
+        ===================================================== */
+
+        function closeFinder() {
+
+            const finder =
+                document.getElementById(
+                    'finder-window'
+                );
+
+
+            finder.style.display =
+                'none';
+
+        }
+
+
+
+        /* =====================================================
+           RIAPRI FINDER
+        ===================================================== */
+
+        function openFinder() {
+
+            const finder =
+                document.getElementById(
+                    'finder-window'
+                );
+
+
+            finder.style.display =
+                'flex';
+
+        }
+
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        function openAboutModal() {
+
+            document
+                .getElementById(
+                    'modal-overlay'
+                )
+                .style.display =
+                    'flex';
+
+        }
+
+
+        function closeModal() {
+
+            document
+                .getElementById(
+                    'modal-overlay'
+                )
+                .style.display =
+                    'none';
+
+        }
+
+
+
+        /* =====================================================
+           INSTAGRAM
+        ===================================================== */
+
+        function openInstagram() {
+
+            window.open(
+                'https://www.instagram.com/ctrlpiux/?hl=it',
+                '_blank'
+            );
+
+        }
+
+
+
+        /* =====================================================
+           CLOCK
+        ===================================================== */
+
+        function updateClock() {
+
+            const now =
+                new Date();
+
+
+            const hours =
+                String(
+                    now.getHours()
+                ).padStart(
+                    2,
+                    '0'
+                );
+
+
+            const minutes =
+                String(
+                    now.getMinutes()
+                ).padStart(
+                    2,
+                    '0'
+                );
+
+
+            document
+                .getElementById(
+                    'clock'
+                )
+                .innerText =
+                    `${hours}:${minutes}`;
+
+        }
+
+
+        setInterval(
+            updateClock,
+            1000
+        );
+
+
+        updateClock();
+
+
+
+        /* =====================================================
+           START
+        ===================================================== */
+
+        renderView(
+            'root'
+        );
+
+
+    </script>
+
+</body>
+
+</html>
